@@ -17,8 +17,9 @@ class Api::V1::UserRestaurantsController < ApplicationController
       user_restaurant = UserRestaurant.create(user_id: user.id, restaurant_id: restaurant.id)
       # user.user_restaurants << user_restaurant
       # restaurant.user_restaurants << user_restaurant
-      byebug
+      render :json => user
     }
+
   end
 
 
