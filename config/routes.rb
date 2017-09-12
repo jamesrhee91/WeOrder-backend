@@ -10,6 +10,8 @@ Rails.application.routes.draw do
       # get '/me', to: 'users#me'
       # get '/todos', to: 'todos#index'
       resources :user_restaurants
+      post '/login', to: 'auth#create'
+      # the route for sign up is the create action for users_controller, included in users resources
     end
   end
 end
