@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       resources :user_restaurants
       post '/login', to: 'auth#create'
       # the route for sign up is the create action for users_controller, included in users resources
+      get '/current-user', to: 'auth#current_user'
     end
   end
 end

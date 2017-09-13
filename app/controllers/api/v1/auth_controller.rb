@@ -12,4 +12,10 @@ class Api::V1::AuthController < ApplicationController
       render json: {error: "Not Authenticated"}
     end
   end
+
+  def current_user
+    byebug
+    something = decoded_token(token)
+  end
+
 end
