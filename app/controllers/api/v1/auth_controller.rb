@@ -3,7 +3,6 @@ class Api::V1::AuthController < ApplicationController
   # method for logging in --- authenticate user and send him back with token
   def create
     user = User.find_by(first_name: params[:name])
-    # byebug
     if user && user.authenticate(params[:password])
       payload = { user_id: user.id}
       token = issue_token(payload)
