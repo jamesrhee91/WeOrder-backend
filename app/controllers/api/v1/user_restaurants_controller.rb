@@ -22,6 +22,12 @@ class Api::V1::UserRestaurantsController < ApplicationController
 
   end
 
-
+# get past orders for the user who is logged in
+  def index
+    user = User.find(first_name: params[:name])
+    restaurants = user.user_restaurants.map {|ur| Restaurant.find(ur.restaurant_id)}
+    byebug
+    render json: {restaurants: restaurants}
+  end
 
 end

@@ -14,7 +14,6 @@ class Api::V1::AuthController < ApplicationController
   end
 
   def current_user
-    byebug
     something = decoded_token(token)
   end
 
